@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import type { HTMLMotionProps } from "framer-motion";
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type BentoCardProps = HTMLMotionProps<"article"> & {
+type BentoCardProps = Omit<HTMLMotionProps<"article">, "children"> & {
+  children: ReactNode;
   glow?: "teal" | "violet" | "amber";
 };
 
